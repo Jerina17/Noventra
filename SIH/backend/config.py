@@ -9,7 +9,7 @@ load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
 BASE_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = BASE_DIR / "frontend"
 DATABASE_DIR = BASE_DIR / "database"
-DATABASE_PATH = Path(os.getenv("DATABASE_PATH", str(DATABASE_DIR / "livelihood_saathi.db")))
+DATABASE_PATH = Path(os.getenv("DATABASE_PATH", "/tmp/livelihood_saathi.db" if os.getenv("VERCEL") else str(DATABASE_DIR / "livelihood_saathi.db")))
 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")
 AI_API_KEY = os.getenv("AI_API_KEY")
