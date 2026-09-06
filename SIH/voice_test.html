@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ta">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Test</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 24px; background: #f5f7f3; color: #1d2a22; }
+      .card { max-width: 620px; margin: 0 auto; background: white; border: 1px solid #d7e1d9; border-radius: 16px; padding: 20px; }
+      button { padding: 12px 16px; border: none; border-radius: 12px; background: #1f6f4a; color: white; font-weight: bold; cursor: pointer; }
+      textarea { width: 100%; min-height: 120px; margin-top: 12px; border: 1px solid #d7e1d9; border-radius: 12px; padding: 12px; }
+      .status { margin-top: 12px; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>தமிழ்</h2>
+      <button id="voiceButton">🎤 பேசவும்</button>
+      <div class="status" id="statusText">Ready</div>
+      <textarea id="transcriptBox" placeholder="குரல் பதில் இங்கு தோன்றும்..."></textarea>
+    </div>
+
+    <script>
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const statusText = document.getElementById('statusText');
+      const transcriptBox = document.getElementById('transcriptBox');
+      const voiceButton = document.getElementById('voiceButton');
+
+      if (!SpeechRecognition) {
+        statusText.textContent = 'SpeechRecognition unavailable';
+        voiceButton.disabled = true;
+        console.error('SpeechRecognition unavailable');
+      } else {
+        const recognition = new SpeechRecognition();
+        recognition.lang = 'ta-IN';
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        recognition.onstart = function () {
+          console.log('CLICKED');
+          console.log('STARTED');
+          statusText.textContent = 'Listening...';
+        };
+
+        recognition.onresult = function (event) {
+          const text = event.results[0][0].transcript;
+          console.log('RESULT:', text);
+          transcriptBox.value = text;
+          statusText.textContent = 'Transcript captured';
+        };
+
+        recognition.onerror = function (event) {
+          console.error('ERROR:', event.error);
+          statusText.textContent = 'Error: ' + event.error;
+        };
+
+        recognition.onend = function () {
+          console.log('ENDED');
+          statusText.textContent = 'Completed';
+        };
+
+        voiceButton.addEventListener('click', async () => {
+          console.log('CLICKED');
+          try {
+            recognition.start();
+          } catch (error) {
+            console.error('START FAILED', error);
+            statusText.textContent = 'Start failed';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

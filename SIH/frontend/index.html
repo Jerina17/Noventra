@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noventra | PM-AJAY GIA AI Platform</title>
+  <meta name="description" content="AI-Driven Voice Assistant for Livelihood Mapping and NSQF-Aligned Skilling Recommendations for SC Communities under GIA Component of PM-AJAY." />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- COLLAPSIBLE SIDEBAR -->
+    <aside class="sidebar" id="appSidebar">
+      <div class="sidebar-header">
+        <a href="#home" class="brand-logo">
+          <div class="emblem-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="brand-info">
+            <span class="brand-name" data-i18n="brand_name">Noventra</span>
+            <span class="brand-sub" data-i18n="brand_sub">PM-AJAY GIA AI</span>
+          </div>
+        </a>
+        <button class="sidebar-toggle-btn" id="sidebarToggle" title="Toggle Sidebar">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- Main Nav -->
+        <div class="nav-group">
+          <div class="nav-group-title" data-i18n="nav_core">Core Navigation</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#home" class="nav-link active" data-page="home">
+                <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
+                <span class="nav-text" data-i18n="nav_home">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#dashboard" class="nav-link" data-page="dashboard">
+                <span class="nav-icon"><i class="fa-solid fa-chart-pie"></i></span>
+                <span class="nav-text" data-i18n="nav_dashboard">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#voice-assistant" class="nav-link" data-page="voice-assistant">
+                <span class="nav-icon"><i class="fa-solid fa-microphone-lines"></i></span>
+                <span class="nav-text" data-i18n="nav_voice">AI Voice Assistant</span>
+                <span class="nav-badge">AI</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- PM-AJAY Skilling -->
+        <div class="nav-group">
+          <div class="nav-group-title" data-i18n="nav_livelihood">Livelihood & Skilling</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#registration" class="nav-link" data-page="registration">
+                <span class="nav-icon"><i class="fa-solid fa-user-plus"></i></span>
+                <span class="nav-text" data-i18n="nav_registration">Beneficiary Registration</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#livelihood-mapping" class="nav-link" data-page="livelihood-mapping">
+                <span class="nav-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+                <span class="nav-text" data-i18n="nav_mapping">Livelihood Mapping</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#nsqf-recommendation" class="nav-link" data-page="nsqf-recommendation">
+                <span class="nav-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                <span class="nav-text" data-i18n="nav_nsqf">NSQF Recommendations</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#career-guidance" class="nav-link" data-page="career-guidance">
+                <span class="nav-icon"><i class="fa-solid fa-briefcase"></i></span>
+                <span class="nav-text" data-i18n="nav_career">Career Guidance</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#learning-roadmap" class="nav-link" data-page="learning-roadmap">
+                <span class="nav-icon"><i class="fa-solid fa-route"></i></span>
+                <span class="nav-text" data-i18n="nav_roadmap">Learning Roadmap</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#government-schemes" class="nav-link" data-page="government-schemes">
+                <span class="nav-icon"><i class="fa-solid fa-building-columns"></i></span>
+                <span class="nav-text" data-i18n="nav_schemes">Government Schemes</span>
+                <span class="nav-badge">GIA</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Governance & Analytics -->
+        <div class="nav-group">
+          <div class="nav-group-title" data-i18n="nav_analytics_group">Analytics & Governance</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#progress-dashboard" class="nav-link" data-page="progress-dashboard">
+                <span class="nav-icon"><i class="fa-solid fa-list-check"></i></span>
+                <span class="nav-text" data-i18n="nav_progress">Progress Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#analytics" class="nav-link" data-page="analytics">
+                <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
+                <span class="nav-text" data-i18n="nav_analytics">Analytics</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#reports" class="nav-link" data-page="reports">
+                <span class="nav-icon"><i class="fa-solid fa-file-contract"></i></span>
+                <span class="nav-text" data-i18n="nav_reports">Reports</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support & Profile -->
+        <div class="nav-group">
+          <div class="nav-group-title" data-i18n="nav_account_group">Account & Support</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#notifications" class="nav-link" data-page="notifications">
+                <span class="nav-icon"><i class="fa-solid fa-bell"></i></span>
+                <span class="nav-text" data-i18n="nav_notifications">Notifications</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#community-support" class="nav-link" data-page="community-support">
+                <span class="nav-icon"><i class="fa-solid fa-users"></i></span>
+                <span class="nav-text" data-i18n="nav_community">Community Support</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#profile" class="nav-link" data-page="profile">
+                <span class="nav-icon"><i class="fa-solid fa-id-card"></i></span>
+                <span class="nav-text" data-i18n="nav_profile">Profile</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#settings" class="nav-link" data-page="settings">
+                <span class="nav-icon"><i class="fa-solid fa-gear"></i></span>
+                <span class="nav-text" data-i18n="nav_settings">Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#about-pm-ajay" class="nav-link" data-page="about-pm-ajay">
+                <span class="nav-icon"><i class="fa-solid fa-circle-info"></i></span>
+                <span class="nav-text" data-i18n="nav_about">About PM-AJAY</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#help-center" class="nav-link" data-page="help-center">
+                <span class="nav-icon"><i class="fa-solid fa-circle-question"></i></span>
+                <span class="nav-text" data-i18n="nav_help">Help Center</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer User Chip -->
+      <div class="sidebar-footer">
+        <div class="user-profile-chip">
+          <div class="user-avatar">
+            SC
+            <span class="status-dot"></span>
+          </div>
+          <div class="user-details">
+            <span class="user-name" id="sidebarUserName">Beneficiary</span>
+            <span class="user-role" id="sidebarVerificationBadge">Status: Not Verified</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="main-wrapper">
+      <!-- TOP NAVBAR -->
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <button class="search-command-btn" id="openCommandPaletteBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span data-i18n="search_placeholder">Search features, schemes, NSQF courses...</span>
+            <span class="command-key">Ctrl K</span>
+          </button>
+        </div>
+
+        <div class="navbar-right">
+          <!-- Active Language Badge -->
+          <span class="nav-badge" id="activeLangBadge" style="background:var(--secondary); font-size:0.75rem; padding:4px 10px;">
+            🇬🇧 EN
+          </span>
+
+          <!-- Try Demo Quick Button -->
+          <button class="btn btn-secondary btn-sm" id="globalDemoBtn">
+            <i class="fa-solid fa-bolt"></i> <span data-i18n="try_demo">Try Demo</span>
+          </button>
+
+          <!-- Voice Mic Quick Trigger -->
+          <button class="action-icon-btn" id="quickVoiceBtn" title="Launch Voice Assistant">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+
+          <!-- Notifications Icon -->
+          <button class="action-icon-btn" id="notificationMenuBtn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="icon-badge">3</span>
+          </button>
+
+          <!-- Multilingual Language Selector -->
+          <select class="lang-select-dropdown" id="languageSelect">
+            <option value="en">🇬🇧 English</option>
+            <option value="ta">🇮🇳 தமிழ் (Tamil)</option>
+            <option value="hi">🇮🇳 हिंदी (Hindi)</option>
+          </select>
+
+          <!-- Dark Mode Toggle -->
+          <button class="action-icon-btn" id="themeToggleBtn" title="Toggle Light/Dark Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- BREADCRUMB HEADER -->
+      <div class="breadcrumb-bar">
+        <div class="breadcrumbs">
+          <a href="#home" class="breadcrumb-item"><i class="fa-solid fa-house"></i> Noventra</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-item active" id="currentBreadcrumb">Home</span>
+        </div>
+        <div class="govt-tag" data-i18n="govt_header">
+          <i class="fa-solid fa-building-columns"></i> Govt of India • PM-AJAY GIA Component
+        </div>
+      </div>
+
+      <!-- MAIN PAGE CONTAINER -->
+      <main class="page-container">
+        
+        <!-- 1. HOME / HERO LANDING PAGE -->
+        <section class="page-view active" id="view-home">
+          <div class="hero-banner">
+            <div class="hero-content">
+              <div class="hero-badge" data-i18n="hero_badge">
+                <i class="fa-solid fa-shield-halved"></i> PM-AJAY Official AI Platform
+              </div>
+              <h1 class="hero-title" data-i18n="hero_title">Empowering SC Communities Through AI Livelihood Mapping</h1>
+              <p class="hero-desc" data-i18n="hero_desc">
+                Noventra transforms GIA component delivery under Pradhan Mantri Anusuchit Jaati Abhyuday Yojana using voice-first AI natural language understanding, NSQF skill gap alignment, and direct government scheme discovery.
+              </p>
+              <div class="hero-actions">
+                <a href="#voice-assistant" class="btn btn-secondary btn-lg">
+                  <i class="fa-solid fa-microphone"></i> <span data-i18n="hero_btn_voice">Launch Voice Assistant</span>
+                </a>
+                <a href="#registration" class="btn btn-outline btn-lg" style="color:white; border-color:rgba(255,255,255,0.4);">
+                  <i class="fa-solid fa-id-card"></i> <span data-i18n="hero_btn_map">Map Livelihood Profile</span>
+                </a>
+                <button class="btn btn-outline btn-lg" id="heroDemoBtn" style="color:white; border-color:rgba(255,255,255,0.4);">
+                  <i class="fa-solid fa-bolt"></i> <span data-i18n="hero_btn_demo">Try Instant Demo</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Metrics Grid -->
+          <div class="grid grid-cols-4" style="margin-bottom: 32px;">
+            <div class="stat-card">
+              <div class="stat-icon-wrapper stat-icon-blue">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div>
+                <div class="stat-number">12,450+</div>
+                <div class="stat-label" data-i18n="stat_beneficiaries">SC Beneficiaries Mapped</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon-wrapper stat-icon-teal">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div>
+                <div class="stat-number">450+</div>
+                <div class="stat-label" data-i18n="stat_courses">NSQF Courses Aligned</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon-wrapper stat-icon-amber">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <div>
+                <div class="stat-number">94.8%</div>
+                <div class="stat-label" data-i18n="stat_accuracy">Skill Gap Accuracy</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon-wrapper stat-icon-green">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </div>
+              <div>
+                <div class="stat-number">₹4.2 Cr</div>
+                <div class="stat-label" data-i18n="stat_grants">GIA Grants Allocated</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workflow 4-Step Diagram -->
+          <div class="card" style="margin-bottom: 32px;">
+            <h2 style="font-size: 1.3rem; margin-bottom: 20px;" data-i18n="pipeline_title">
+              <i class="fa-solid fa-diagram-project" style="color:var(--primary);"></i> How Noventra AI Livelihood Pipeline Works
+            </h2>
+            <div class="grid grid-cols-4">
+              <div class="card" style="background-color:var(--surface-alt); text-align:center;">
+                <div class="stat-icon-wrapper stat-icon-blue" style="margin: 0 auto 12px;">1</div>
+                <h3 style="font-size:1rem; margin-bottom:8px;" data-i18n="step1_title">AI Voice Input</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted);" data-i18n="step1_desc">Speak in Tamil, Hindi, or English to describe work experience.</p>
+              </div>
+              <div class="card" style="background-color:var(--surface-alt); text-align:center;">
+                <div class="stat-icon-wrapper stat-icon-teal" style="margin: 0 auto 12px;">2</div>
+                <h3 style="font-size:1rem; margin-bottom:8px;" data-i18n="step2_title">Livelihood Extraction</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted);" data-i18n="step2_desc">NLP categorizes education, income, existing skills & aspirations.</p>
+              </div>
+              <div class="card" style="background-color:var(--surface-alt); text-align:center;">
+                <div class="stat-icon-wrapper stat-icon-amber" style="margin: 0 auto 12px;">3</div>
+                <h3 style="font-size:1rem; margin-bottom:8px;" data-i18n="step3_title">NSQF Skill Gap Analysis</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted);" data-i18n="step3_desc">Deterministic AI matches qualification packs & skill gaps.</p>
+              </div>
+              <div class="card" style="background-color:var(--surface-alt); text-align:center;">
+                <div class="stat-icon-wrapper stat-icon-green" style="margin: 0 auto 12px;">4</div>
+                <h3 style="font-size:1rem; margin-bottom:8px;" data-i18n="step4_title">GIA Grant Allocation</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted);" data-i18n="step4_desc">Recommends 100% subsidized training & government grants.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. DASHBOARD VIEW -->
+        <section class="page-view" id="view-dashboard">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="dash_title">Government Monitoring Dashboard</h1>
+              <p data-i18n="dash_desc">Aggregated analytics and livelihood mapping metrics under PM-AJAY GIA Component.</p>
+            </div>
+            <div class="header-actions">
+              <button class="btn btn-outline" id="refreshDashboardBtn"><i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="dash_btn_refresh">Refresh</span></button>
+              <button class="btn btn-primary" id="exportDashboardPdfBtn"><i class="fa-solid fa-file-pdf"></i> <span data-i18n="dash_btn_export">Export DIU Summary</span></button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4" style="margin-bottom: 24px;">
+            <div class="stat-card">
+              <div class="stat-icon-wrapper stat-icon-blue"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <div class="stat-number" id="dashTotalBeneficiaries">--</div>
+                <div class="stat-label" data-i18n="dash_total">Total Beneficiaries</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon-wrapper stat-icon-teal"><i class="fa-solid fa-microphone-slash"></i></div>
+              <div>
+                <div class="stat-number">3,892</div>
+                <div class="stat-label" data-i18n="dash_interactions">Voice Interactions</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon-wrapper stat-icon-green"><i class="fa-solid fa-building-columns"></i></div>
+              <div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label" data-i18n="dash_subsidy">GIA Grant Subsidy</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon-wrapper stat-icon-amber"><i class="fa-solid fa-star"></i></div>
+              <div>
+                <div class="stat-number">88 / 100</div>
+                <div class="stat-label" data-i18n="dash_readiness">Readiness Score</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2" style="margin-bottom: 24px;">
+            <div class="card">
+              <h3><i class="fa-solid fa-chart-simple" style="color:var(--primary);"></i> <span data-i18n="dash_top_occ">Top Beneficiary Occupations</span></h3>
+              <canvas id="occupationsChart" style="max-height: 260px; margin-top: 16px;"></canvas>
+            </div>
+            <div class="card">
+              <h3><i class="fa-solid fa-chart-pie" style="color:var(--secondary);"></i> <span data-i18n="dash_skill_gaps">Identified Skill Gaps</span></h3>
+              <canvas id="skillGapsChart" style="max-height: 260px; margin-top: 16px;"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. AI VOICE ASSISTANT PAGE -->
+        <section class="page-view" id="view-voice-assistant">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="voice_title">AI Voice Assistant</h1>
+              <p data-i18n="voice_desc">Speak naturally in English, Tamil, or Hindi to build your profile and discover skilling pathways.</p>
+            </div>
+          </div>
+
+          <div class="voice-assistant-container">
+            <div class="voice-chat-header">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <div class="chat-avatar" style="background:linear-gradient(135deg, var(--primary), var(--secondary)); width:32px; height:32px;">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                  <span style="font-weight:700; font-size:0.9rem;">Noventra Voice Engine</span>
+                  <span style="display:block; font-size:0.75rem; color:var(--success);"><i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> Active & Ready</span>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-sm" id="clearChatBtn"><i class="fa-solid fa-trash"></i> <span data-i18n="voice_clear">Clear Conversation</span></button>
+            </div>
+
+            <!-- Chat Bubble Messages -->
+            <div class="chat-history" id="chatHistoryBox">
+              <div class="chat-message ai">
+                <div class="chat-avatar"><i class="fa-solid fa-robot"></i></div>
+                <div class="chat-bubble" data-i18n="voice_welcome">
+                  Welcome to Noventra! I am your AI Livelihood Assistant under PM-AJAY GIA. Speak or type your work experience, education, or career goals.
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Suggestion Chips -->
+            <div class="quick-prompts-bar">
+              <button class="prompt-chip" data-prompt="Hi I am Anushya. Current occupation Tailor. Education 12th. Goal Own Boutique." data-i18n="voice_prompt_1">
+                👗 Tailor & Boutique Goal
+              </button>
+              <button class="prompt-chip" data-prompt="I am a farmer interested in Organic Farming and Agri Business." data-i18n="voice_prompt_2">
+                🌾 Farmer & Organic Farming
+              </button>
+              <button class="prompt-chip" data-prompt="I am an electrician looking for Solar PV Panel Installation skills." data-i18n="voice_prompt_3">
+                ☀️ Electrician & Solar PV
+              </button>
+            </div>
+
+            <!-- Waveform Canvas & Fab Mic -->
+            <div class="voice-visualizer-bar">
+              <canvas class="waveform-canvas" id="voiceWaveformCanvas"></canvas>
+              <div style="display:flex; align-items:center; gap:16px;">
+                <button class="mic-fab-button" id="mainMicFab" title="Click to Speak">
+                  <i class="fa-solid fa-microphone"></i>
+                </button>
+              </div>
+              <span style="font-size:0.85rem; color:var(--text-muted); font-weight:600;" id="voiceStatusLabel" data-i18n="voice_status_ready">
+                Voice assistant is ready. Click microphone to speak.
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. BENEFICIARY REGISTRATION -->
+        <section class="page-view" id="view-registration">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="form_title">Beneficiary Registration</h1>
+              <p data-i18n="form_desc">Register SC Livelihood Profile under PM-AJAY GIA Component.</p>
+            </div>
+          </div>
+
+          <div class="card" style="max-width:760px; margin: 0 auto;">
+            <form id="beneficiaryForm">
+              <div class="grid grid-cols-2" style="gap:16px;">
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="formFullName" placeholder="e.g. Anushya" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Age</label>
+                  <input type="number" class="form-control" id="formAge" placeholder="e.g. 24" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Gender</label>
+                  <select class="form-control" id="formGender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Mobile Number</label>
+                  <input type="tel" class="form-control" id="formMobile" placeholder="e.g. 9876543210" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">District</label>
+                  <input type="text" class="form-control" id="formDistrict" placeholder="e.g. Coimbatore" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Village</label>
+                  <input type="text" class="form-control" id="formVillage" placeholder="e.g. Kinathukadavu" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Highest Education</label>
+                  <input type="text" class="form-control" id="formEducation" placeholder="e.g. 12th" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Current Occupation</label>
+                  <input type="text" class="form-control" id="formOccupation" placeholder="e.g. Tailor, Farmer, Electrician" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Years of Experience</label>
+                  <input type="number" class="form-control" id="formExperience" placeholder="e.g. 3" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Existing Skills</label>
+                  <input type="text" class="form-control" id="formSkills" placeholder="e.g. Sewing, Stitching" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Career Goal</label>
+                  <input type="text" class="form-control" id="formCareerGoal" placeholder="e.g. Open Boutique" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Interests</label>
+                  <input type="text" class="form-control" id="formInterest" placeholder="e.g. Fashion Design" required />
+                </div>
+                <div class="form-group" style="grid-column: span 2;">
+                  <label class="form-label">Preferred Language</label>
+                  <select class="form-control" id="formPrefLang" required>
+                    <option value="English">English</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Hindi">Hindi</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:12px; margin-top:24px;">
+                <button type="submit" class="btn btn-primary" style="flex:1;"><i class="fa-solid fa-floppy-disk"></i> <span data-i18n="form_btn_save">Save & Get Recommendations</span></button>
+                <button type="button" class="btn btn-secondary" id="formDemoFillBtn"><i class="fa-solid fa-bolt"></i> Auto Fill Sample Profile</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- 5. LIVELIHOOD MAPPING PAGE -->
+        <section class="page-view" id="view-livelihood-mapping">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_mapping">Livelihood Mapping</h1>
+              <p>Digital profile representation and SC village cluster mapping.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3" style="margin-bottom:24px;">
+            <div class="card" style="grid-column: span 2;">
+              <h3><i class="fa-solid fa-id-card-clip" style="color:var(--primary);"></i> Active Beneficiary Livelihood Summary</h3>
+              <div id="livelihoodSummaryContent" style="margin-top:16px;">
+                <p style="color:var(--text-muted);">No active profile saved yet. Complete registration or click "Try Demo".</p>
+              </div>
+            </div>
+            <div class="card">
+              <h3><i class="fa-solid fa-bullseye" style="color:var(--secondary);"></i> Livelihood Readiness Score</h3>
+              <div style="text-align:center; padding: 24px 0;">
+                <div style="font-size:3.5rem; font-weight:800; color:var(--primary);" id="livelihoodScoreText">88 / 100</div>
+                <span class="govt-tag" style="display:inline-flex;">High GIA Grant Priority</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. NSQF SKILL RECOMMENDATION PAGE -->
+        <section class="page-view" id="view-nsqf-recommendation">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nsqf_title">NSQF Aligned Skill Recommendations</h1>
+              <p data-i18n="nsqf_desc">Ranked National Qualification Framework (NSQF) courses aligned with PM-AJAY GIA Grants.</p>
+            </div>
+            <button class="btn btn-outline" id="readRecommendationsAudioBtn"><i class="fa-solid fa-volume-high"></i> <span data-i18n="nsqf_listen_btn">Listen to Recommendations</span></button>
+          </div>
+
+          <div class="grid grid-cols-2" id="recommendationsContainer">
+            <!-- Dynamic NSQF Recommendation Cards render here -->
+          </div>
+        </section>
+
+        <!-- 7. CAREER GUIDANCE -->
+        <section class="page-view" id="view-career-guidance">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_career">Career Guidance</h1>
+              <p>Wage growth projection comparing unorganized traditional roles vs NSQF certified careers.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3><i class="fa-solid fa-arrow-trend-up" style="color:var(--success);"></i> Monthly Income Progression</h3>
+            <canvas id="incomeProgressionChart" style="max-height:300px; margin-top:20px;"></canvas>
+          </div>
+        </section>
+
+        <!-- 8. LEARNING ROADMAP (DYNAMIC PER OCCUPATION) -->
+        <section class="page-view" id="view-learning-roadmap">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_roadmap">Learning Roadmap</h1>
+              <p>Milestone progression path dynamically tailored to your current occupation & goal.</p>
+            </div>
+          </div>
+
+          <div class="card" id="roadmapContainer">
+            <!-- Dynamic Roadmap Steps Rendered Here -->
+          </div>
+        </section>
+
+        <!-- 9. GOVERNMENT SCHEMES (DYNAMIC PER PROFILE) -->
+        <section class="page-view" id="view-government-schemes">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="schemes_title">PM-AJAY & Allied Government Schemes</h1>
+              <p data-i18n="schemes_desc">Grant-in-Aid, stipend, and self-employment funding catalog dynamically matched to your profile.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3" id="schemesContainer">
+            <!-- Dynamic Scheme Cards Rendered Here -->
+          </div>
+        </section>
+
+        <!-- 10. PROGRESS DASHBOARD -->
+        <section class="page-view" id="view-progress-dashboard">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_progress">Progress Dashboard</h1>
+              <p>Track your course completion, attendance, and GIA grant application state.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3><i class="fa-solid fa-graduation-cap" style="color:var(--primary);"></i> Enrolled NSQF Course Progress</h3>
+            <div style="margin-top:20px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-weight:600;">
+                <span id="progressCourseTitle">Skilling & Micro-Entrepreneurship</span>
+                <span>65% Completed</span>
+              </div>
+              <div style="width:100%; background:var(--surface-alt); height:12px; border-radius:var(--radius-full); overflow:hidden;">
+                <div style="width:65%; background:var(--primary); height:100%;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 11. ANALYTICS PAGE -->
+        <section class="page-view" id="view-analytics">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_analytics">Analytics</h1>
+              <p>Aggregated demographic metrics for Government Policy Officers.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>District Name</th>
+                  <th>SC Beneficiaries</th>
+                  <th>Top Skill Demand</th>
+                  <th>GIA Grants Disbursed</th>
+                </tr>
+              </thead>
+              <tbody id="analyticsTableBody">
+                <tr>
+                  <td>Coimbatore</td>
+                  <td>1,420</td>
+                  <td>Garment Manufacturing</td>
+                  <td>₹48,50,000</td>
+                </tr>
+                <tr>
+                  <td>Vellore</td>
+                  <td>1,180</td>
+                  <td>Solar Installation</td>
+                  <td>₹36,20,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 12. REPORTS -->
+        <section class="page-view" id="view-reports">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_reports">Reports</h1>
+              <p>Official exportable PDF summary reports formatted for PM-AJAY committee audits.</p>
+            </div>
+          </div>
+
+          <div class="card" style="text-align:center; padding:48px;">
+            <i class="fa-solid fa-file-pdf" style="font-size:3rem; color:var(--danger); margin-bottom:16px;"></i>
+            <h2>PM-AJAY Livelihood Assessment Report</h2>
+            <p style="color:var(--text-muted); max-width:480px; margin: 12px auto;">Generates an official signed PDF document containing beneficiary profiles, skill gap analysis, and recommended NSQF qualification codes.</p>
+            <button class="btn btn-primary btn-lg" id="generateReportBtn"><i class="fa-solid fa-download"></i> Download Official DIU PDF Report</button>
+          </div>
+        </section>
+
+        <!-- 13. NOTIFICATIONS -->
+        <section class="page-view" id="view-notifications">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_notifications">Notifications</h1>
+              <p>System alerts regarding scheme openings, course updates, and grant status.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="padding:12px; background:var(--surface-alt); border-radius:var(--radius-md); display:flex; gap:12px; align-items:center;">
+                <i class="fa-solid fa-bell" style="color:var(--primary); font-size:1.2rem;"></i>
+                <div>
+                  <span style="font-weight:700; display:block;">New PM-AJAY GIA Batch Opening</span>
+                  <span style="font-size:0.85rem; color:var(--text-muted);">Coimbatore District Skill Center is accepting applications.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 14. COMMUNITY SUPPORT -->
+        <section class="page-view" id="view-community-support">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_community">Community Support</h1>
+              <p>Connect with successful SC entrepreneurs and NSQF certified mentors.</p>
+            </div>
+          </div>
+          <div class="card"><p>Peer discussion board and mentor directory simulation under PM-AJAY GIA.</p></div>
+        </section>
+
+        <!-- 15. PROFILE PAGE -->
+        <section class="page-view" id="view-profile">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="profile_title">Beneficiary Digital Profile</h1>
+              <p data-i18n="profile_desc">Official SC Livelihood Record & Verification Status.</p>
+            </div>
+          </div>
+
+          <div class="card" style="max-width:600px;">
+            <div style="display:flex; align-items:center; gap:20px; border-bottom:1px solid var(--border); padding-bottom:20px; margin-bottom:20px;">
+              <div class="user-avatar" style="width:64px; height:64px; font-size:1.5rem;">SC</div>
+              <div>
+                <h2 id="profileDisplayName">Beneficiary Profile</h2>
+                <span class="govt-tag" id="profileVerificationTag" style="background:var(--warning-light, #fef3c7); color:var(--warning, #d97706);"><i class="fa-solid fa-clock-rotate-left"></i> Verification Status: Not Verified</span>
+              </div>
+            </div>
+
+            <div id="verificationSectionCard" style="background:var(--surface-alt); padding:16px; border-radius:var(--radius-md); margin-bottom:20px;">
+              <h4 style="font-size:1rem; font-weight:700; margin-bottom:6px;"><i class="fa-solid fa-shield-halved" style="color:var(--primary);"></i> Would you like to verify your profile?</h4>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">Enter your Aadhaar Number or Virtual ID (VID) below to capture verification details for demo processing.</p>
+              <div style="display:flex; gap:10px;">
+                <input type="text" class="form-control form-control-sm" id="verifyAadhaarInput" placeholder="Enter 12-digit Aadhaar or 16-digit VID" style="font-size:0.85rem;" />
+                <button class="btn btn-primary btn-sm" id="submitVerifyBtn"><i class="fa-solid fa-check"></i> Verify</button>
+              </div>
+              <div id="verifyMessageText" style="margin-top:8px; font-size:0.8rem; font-weight:600;"></div>
+            </div>
+
+            <div id="profileDetailsContainer">
+              <p style="color:var(--text-muted);">No beneficiary information recorded yet. Start interactive conversation with Voice Assistant or complete registration.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 16. SETTINGS -->
+        <section class="page-view" id="view-settings">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="settings_title">Application Settings</h1>
+              <p data-i18n="settings_desc">Configure theme preferences, low-bandwidth mode, and speech recognition settings.</p>
+            </div>
+          </div>
+
+          <div class="card" style="max-width:600px;">
+            <div class="form-group">
+              <label class="form-label" data-i18n="settings_label_lang">Speech Recognition Language</label>
+              <select class="form-control" id="settingsVoiceLang">
+                <option value="en-IN">English (India)</option>
+                <option value="ta-IN">தமிழ் (Tamil)</option>
+                <option value="hi-IN">हिंदी (Hindi)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label style="display:flex; align-items:center; gap:12px; cursor:pointer;">
+                <input type="checkbox" id="lowBandwidthToggle" />
+                <span style="font-weight:600;" data-i18n="settings_label_lowbw">Enable Low-Bandwidth Mode (Optimized for rural 2G/3G networks)</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- 17. ABOUT PM-AJAY -->
+        <section class="page-view" id="view-about-pm-ajay">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_about">About PM-AJAY</h1>
+              <p>Pradhan Mantri Anusuchit Jaati Abhyuday Yojana Ministry Guidelines.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Ministry of Social Justice and Empowerment, Govt of India</h3>
+            <p style="margin-top:12px; line-height:1.6; color:var(--text-muted);">
+              PM-AJAY is a merged scheme aimed at reducing poverty of Scheduled Caste (SC) communities by generating additional employment opportunities through skill development.
+            </p>
+          </div>
+        </section>
+
+        <!-- 18. HELP CENTER -->
+        <section class="page-view" id="view-help-center">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1 data-i18n="nav_help">Help Center</h1>
+              <p>Frequently Asked Questions and Technical Support.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>How do I apply for NSQF courses with PM-AJAY GIA grant?</h3>
+            <p style="color:var(--text-muted); margin-top:8px;">You can use the Noventra AI Voice Assistant or Beneficiary Registration page. Based on your profile, recommended courses are 100% grant funded.</p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- SCHEME / GRANT APPLICATION MODAL (ISSUE 7 FIX) -->
+  <div class="modal-backdrop" id="schemeApplicationModal">
+    <div class="modal-card">
+      <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px;">
+        <h3 id="appModalTitle" style="font-size:1.2rem; font-weight:700;">PM-AJAY Grant Application</h3>
+        <button class="btn btn-ghost btn-sm" id="closeSchemeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="appModalBody">
+        <!-- Application details populate dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH COMMAND PALETTE MODAL (Ctrl + K) -->
+  <div class="modal-backdrop" id="commandPaletteModal">
+    <div class="modal-card">
+      <div style="display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border); padding-bottom:12px;">
+        <i class="fa-solid fa-magnifying-glass" style="color:var(--text-muted);"></i>
+        <input type="text" class="form-control" id="commandSearchInput" placeholder="Search features, schemes, NSQF courses..." style="border:none;" autofocus />
+        <button class="btn btn-ghost btn-sm" id="closeCommandPaletteBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="margin-top:16px; display:flex; flex-direction:column; gap:8px;" id="commandSearchResults">
+        <a href="#voice-assistant" class="nav-link"><i class="fa-solid fa-microphone"></i> AI Voice Assistant</a>
+        <a href="#livelihood-mapping" class="nav-link"><i class="fa-solid fa-map"></i> Livelihood Mapping</a>
+        <a href="#nsqf-recommendation" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> NSQF Recommendations</a>
+        <a href="#government-schemes" class="nav-link"><i class="fa-solid fa-building-columns"></i> Government Schemes</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JAVASCRIPT BUNDLE -->
+  <script src="js/app.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/recommendations.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

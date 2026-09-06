@@ -1,0 +1,72 @@
+[
+  {
+    "id": "course_tailor_01",
+    "title": "Garment Manufacturing & Sewing Machine Operation",
+    "sector": "Apparel & Garment",
+    "occupation": "Garment Manufacturer",
+    "nsqf_level": "Level 4",
+    "required_education": "8th Pass",
+    "skills": ["Garment manufacturing", "Sewing machine operation", "Pattern drafting", "Stitching"],
+    "interests": ["Tailoring", "Fashion", "Garment Industry"],
+    "target_roles": ["Garment Manufacturer", "Tailor", "Fashion Designer"],
+    "district": "Any",
+    "description": "Comprehensive training in industrial garment manufacturing, pattern cutting, and quality control.",
+    "keywords": ["tailor", "sewing", "fashion", "garment", "stitching", "apparel"]
+  },
+  {
+    "id": "course_agri_01",
+    "title": "Organic Farming & Agri Business Entrepreneurship",
+    "sector": "Agriculture",
+    "occupation": "Organic Farmer / Agri Entrepreneur",
+    "nsqf_level": "Level 4",
+    "required_education": "8th Pass",
+    "skills": ["Organic composting", "Drip irrigation", "Crop management", "Agri marketing"],
+    "interests": ["Agriculture", "Organic Farming", "Agri Business"],
+    "target_roles": ["Organic Grower", "Farm Manager", "Agri Entrepreneur"],
+    "district": "Any",
+    "description": "Learn modern bio-fertilizers, organic certification, drip irrigation, and direct farm marketing.",
+    "keywords": ["farmer", "farming", "agriculture", "organic", "agri", "crop"]
+  },
+  {
+    "id": "course_elec_01",
+    "title": "Electrical Wiring & Solar PV Panel Installation",
+    "sector": "Electrical & Energy",
+    "occupation": "Electrical Technician",
+    "nsqf_level": "Level 4",
+    "required_education": "10th Pass",
+    "skills": ["House wiring", "Solar panel mounting", "Inverter wiring", "Circuit safety"],
+    "interests": ["Electrical", "Solar Energy", "Industrial Electrical"],
+    "target_roles": ["Electrician", "Solar Installer", "Maintenance Technician"],
+    "district": "Any",
+    "description": "Practical training on domestic electrical wiring, solar panel installation, and inverter maintenance.",
+    "keywords": ["electrician", "electrical", "solar", "wiring", "circuit"]
+  },
+  {
+    "id": "course_log_01",
+    "title": "Commercial Driving, Warehouse & Fleet Operations",
+    "sector": "Logistics & Transport",
+    "occupation": "Commercial Driver / Logistics Associate",
+    "nsqf_level": "Level 4",
+    "required_education": "8th Pass",
+    "skills": ["Heavy driving", "Warehouse inventory", "Fleet tracking", "Road safety"],
+    "interests": ["Driving", "Logistics", "Warehouse Operations"],
+    "target_roles": ["Commercial Driver", "Warehouse Operator", "Fleet Supervisor"],
+    "district": "Any",
+    "description": "Certification course in commercial vehicle driving, cargo handling, and warehouse dispatch systems.",
+    "keywords": ["driver", "driving", "logistics", "warehouse", "fleet"]
+  },
+  {
+    "id": "course_it_01",
+    "title": "Full-Stack Web Development & Python Data Science",
+    "sector": "IT & Software",
+    "occupation": "Web Developer / Data Analyst",
+    "nsqf_level": "Level 4",
+    "required_education": "12th Pass",
+    "skills": ["HTML/CSS/JS", "Python coding", "Data Analytics", "AI Fundamentals"],
+    "interests": ["Computer", "Web Development", "Python", "Data Analytics", "AI"],
+    "target_roles": ["Frontend Developer", "Python Programmer", "Data Analyst"],
+    "district": "Any",
+    "description": "Industry-aligned software development track covering Python, Web Frontend, Data Analytics, and AI.",
+    "keywords": ["computer", "student", "web", "python", "data", "analytics", "ai", "coding"]
+  }
+]
